@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS week_1/task_1</title>
+</head>
+<body>
+    <script>
+        var one = 10;
+        var two = 20;
+
+        // Add Variables Here
+
+// Ouput
+console.log(String(one).concat(String(two))); // Normal Concatenate => 1020
+console.log(typeof(String(one))); // Normal Concatenate => String
+console.log(`${one}${two}`); // Template Literals Way => 1020
+console.log(typeof`${one}${two}`); // Template Literals Way => String
+
+console.log(String(two)+ "\n"+(String(one)));
+/*
+Normal Concatenate
+20
+10
+*/
+
+console.log(`${two}
+${one}`);
+/*
+  Template Literals Way
+  20
+  10
+*/
+    </script>
+</body>
+</html>
