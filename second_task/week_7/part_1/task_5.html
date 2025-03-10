@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_6/part_1/task_5</title>
+</head>
+
+<body>
+    <script>
+        let friends = ["Ahmed", "Sayed", "Eman", "Mahmoud", "Ameer", "Osama", "Sameh"];
+        let letter = "a";
+        pointer = false;
+        for (i = friends.indexOf("Ahmed"); i < friends.length; i++) {
+
+            if (!friends[i].toLowerCase().startsWith(letter)) {
+                ++pointer;
+                console.log(`${pointer} => ${friends[i]}`)
+            }
+        }
+    </script>
+</body>
+
+</html>

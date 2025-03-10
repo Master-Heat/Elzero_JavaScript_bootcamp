@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_5/part_3/task</title>
+</head>
+
+<body>
+    <script>
+        let day = "   tuesday   ";
+        // You Need To Remove Spaces And Make First Letter Capital => Friday
+        day = day.trim()
+        day = day[0].toLocaleUpperCase() + day.substring(1).trim()
+        var result = "Its Not A Valid Day"
+        //let day = "Friday";
+        //let day = "Saturday";
+        //let day = "Sunday";
+        // Output => "No Appointments Available"
+
+        switch (day) {
+            case "Friday":
+            case "Saturday":
+            case "Sunday":
+                result = "No Appointments Available";
+                break;
+            case "Monday":
+            case "Thursday":
+                result = "From 10:00 AM To 5:00 PM";
+                break;
+            case "Tuesday":
+                result = "From 10:00 AM To 6:00 PM";
+                break;
+            case "Wednesday":
+                result = "From 10:00 AM To 7:00 PM";
+                break;
+        }
+        console.log(result)
+        //let day = "Monday";
+        //let day = "Thursday";
+        // Output => "From 10:00 AM To 5:00 PM"
+
+        //let day = "Tuesday";
+        // Output => "From 10:00 AM To 6:00 PM"
+
+        //let day = "Wednesday";
+        // Output => "From 10:00 AM To 7:00 PM"
+
+        //let day = "World";
+        // Output => "Its Not A Valid Day"
+    </script>
+</body>
+
+</html>
