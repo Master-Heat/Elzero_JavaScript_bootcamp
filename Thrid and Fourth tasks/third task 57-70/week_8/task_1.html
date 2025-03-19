@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sayHello(theName, theGender) {
+            if (typeof (theGender) === "undefined") {
+                console.log(`Hello ${theName}`)
+            }
+            else if (theGender.toLowerCase() === "male") {
+                console.log(`Hello Mr ${theName}`)
+            } else if (theGender.toLowerCase() === `female`) {
+
+                console.log(`Hello Miss ${theName}`)
+            }
+        }
+        sayHello("Osama", "Male"); // "Hello Mr Osama"
+        sayHello("Eman", "Female"); // "Hello Miss Eman"
+        sayHello("Sameh"); // "Hello Sameh"
+    </script>
+</body>
+
+</html>
