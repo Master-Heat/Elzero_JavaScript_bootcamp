@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_9/task_1</title>
+</head>
+
+<body>
+    <script>
+        function getDetails(zName, zAge, zCountry) {
+            function namePattern(zName) {
+                let name = ""
+                // Write Your Code Here
+                // Osama Mohamed => Osama M.
+                // Ahmed ali => Ahmed A.
+                for (i = 0; i < zName.length; i++) {
+                    name += zName[i]
+                    var index = i;
+                    if (zName[i] === " ") {
+                        break;
+                    }
+                }
+                return `${name} ${zName[index + 1].toUpperCase()}.`;
+            }
+
+            function ageWithMessage(zAge) {
+                let age = "";
+                for (i = 0; i < zAge.length; i++)
+                    if (zAge[i] === " ") { }
+                    else if (!isNaN(Number(zAge[i]))) {
+                        //        age += zAge[i]
+                        age += (zAge[i])
+                    }
+                    else {
+                        break;
+                    }
+
+                // Write Your Code Here
+                // 38 Is My Age => Your Age Is 38
+                // 32 Is The Age => Your Age Is 32
+                return (`Your age is ${age}`)
+            }
+            function countryTwoLetters(zCountry) {
+                return `You Live In ${zCountry[0].toUpperCase()}${zCountry[1].toUpperCase()}`
+                // Write Your Code Here
+                // Egypt => You Live In EG
+                // Syria => You Live In SY
+            }
+            function fullDetails() {
+                return `Hello ${namePattern((zName))}, ${ageWithMessage(zAge)}, ${countryTwoLetters(zCountry)}`
+            }
+            return fullDetails(); // Do Not Edit This
+        }
+
+        console.log(getDetails("Osama Mohamed", "38 Is My Age", "Egypt"));
+        // Hello Osama M., Your Age Is 38, You Live In EG
+
+        console.log(getDetails("Ahmed ali", "32 Is The Age", "Syria"));
+        // Hello Ahmed A., Your Age Is 32, You Live In SY
+    </script>
+    <script>
+
+
+    </script>
+</body>
+
+</html>
