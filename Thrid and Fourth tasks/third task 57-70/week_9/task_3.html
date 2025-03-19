@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_9/task_3</title>
+</head>
+
+<body>
+    <script>
+        checker = zName => status => salary => status === "Available" ? `${zName}, My Salary Is ${salary}` : `Iam Not Avaialble`;
+        ;
+        // according to calling method there must be three function in this function rather than one function with three atributes
+
+
+        console.log(checker("Osama")("Available")(4000)); // Osama, My Salary Is 4000
+        console.log(checker("Ahmed")("Not Available")()); // Iam Not Avaialble
+
+        //here an example with one function
+        checker2 = (zName, status, salary) => status === "Available" ? `${zName}, My Salary Is ${salary}` : `Iam Not Avaialble`;
+        console.log(checker2("Osama", "Available", 4000)); // Osama, My Salary Is 4000
+        console.log(checker2("Ahmed", "Not Available",)); // Iam Not Avaialble
+    </script>
+</body>
+
+</html>
