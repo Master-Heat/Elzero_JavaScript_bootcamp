@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function multiply(...numbers) {
+            let result = 1;
+            for (i = 0; i < numbers.length; i++) {
+                if (typeof numbers[i] === "string") {
+
+                } else if (typeof numbers[i] === "number") {
+                    result *= Math.trunc(numbers[i])
+                }
+
+            }
+            console.log(result)
+        }
+        multiply(10, 20); // 200
+        multiply("A", 10, 30); // 300
+        multiply(100.5, 10, "B"); // 1000
+    </script>
+</body>
+
+</html>
