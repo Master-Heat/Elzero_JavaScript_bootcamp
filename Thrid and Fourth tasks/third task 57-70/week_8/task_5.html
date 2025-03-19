@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week_8/Task_5</title>
+</head>
+
+<body>
+    <script>
+        function createSelectBox(startYear, endYear) {
+            document.write('<select>')
+            for (startYear; startYear <= endYear; startYear++) {
+                document.write(`<option value="${startYear}">${startYear}</option>`);
+            }
+            document.write('</select>')
+        }
+        createSelectBox(2000, 2021);
+    </script>
+</body>
+
+</html>
