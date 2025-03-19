@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_9/task_4</title>
+</head>
+
+<body>
+    <script>
+        function specialMix(...data) {
+            // Write Your Code Here
+            let result = 0;
+            for (let i = 0; i < data.length; i++) {
+                data[i] = parseInt(data[i]);
+                if (!isNaN(data[i])) {
+                    result += data[i]
+                }
+                else { };
+            }
+            if (result === 0) return "All Inputs Are String";
+            return result;
+        }
+
+        console.log(specialMix(1, 20, 300, 4000)); // Output => 4321
+        console.log(specialMix("30Test", "Testing", "70Cool")); // Output => 100
+        console.log(specialMix("Testing", "5Testing", "250Cool")); // Output => 255
+        console.log(specialMix("Test", "Cool", "Test")); // Output => All Inp!uts Are String
+    </script>
+</body>
+
+</html>
