@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week_10/task_2</title>
+</head>
+
+<body>
+    <script>
+        let myString = "EElllzzzzzzzeroo";
+        // the idea indexOf() function return first index of the letter
+        let output = myString.split("").filter(function (el, i) {
+            return myString.indexOf(el) === i
+        }).join("")
+
+        // Elzero
+        console.log(output)
+    </script>
+</body>
+
+</html>
