@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week_10/task_4</title>
+</head>
+
+<body>
+    <script>
+        let numsAndStrings = [1, 10, -10, -20, 5, "A", 3, "B", "C"];
+        let output = numsAndStrings.filter(function (ele) {
+            return isNaN(ele) ? "" : ele
+        }).map(function (ele) {
+            return -ele
+        })
+        console.log(output)
+        // [-1, -10, 10, 20, -5, -3]
+    </script>
+</body>
+
+</html>
