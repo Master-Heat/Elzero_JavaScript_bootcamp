@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week_10/task_3</title>
+</head>
+
+<body>
+    <script>
+        let myArray = ["E", "l", "z", ["e", "r"], "o"];
+        let output = myArray.reduce(function (acc, curr) {
+            return acc.concat(curr)
+        }, [])  // this code will concat every element of array on new array created in accumlator
+            .reduce(function (acc, curr) {
+                return `${acc}${curr}`
+            })
+        console.log(output)
+        // Elzero
+    </script>
+</body>\
+
+</html>
