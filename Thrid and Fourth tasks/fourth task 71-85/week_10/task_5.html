@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week_10/task_5</title>
+</head>
+
+<body>
+    <script>
+        let nums = [2, 12, 11, 5, 10, 1, 99];
+        let output = nums.reduce(function (acc, curr) {
+            return curr % 2 ? acc + curr : curr * acc
+        }, 1)
+        // 500
+        console.log(output)
+    </script>
+</body>
+
+</html>
