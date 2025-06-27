@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_12/task_4</title>
+</head>
+
+<body>
+    <div class="one" title="two">Two</div>
+    <div class="two" title="one">One</div>
+    <script>
+        let one = document.querySelector(".one")
+        let two = document.querySelector(".two")
+        let titleTwo = one.title
+        one.title = two.title
+        two.title = titleTwo
+        let oneVal = two.textContent
+        let twoVal = one.textContent
+        one.innerHTML = oneVal
+        two.innerHTML = twoVal
+
+        let Two2 = document.createTextNode(" " + one.textContent.indexOf("e"))
+        two.appendChild(Two2)
+        //two.appendChild()
+    </script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_12/task_6</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="number" name="elements" class="input" placeholder="Number Of Elements" />
+        <input type="text" name="texts" class="input" placeholder="Elements Text" />
+        <select name="type" class="input">
+            <option value="Div">Div</option>
+            <option value="Section">Section</option>
+        </select>
+        <input type="submit" name="create" value="Create" />
+        <div class="results"></div>
+    </form>
+    <script>
+
+
+        document.forms[0].onsubmit = function (e) {
+            e.preventDefault();
+        }
+
+        let form = document.forms[0]
+        let inputs = document.querySelectorAll("input")
+        let select = document.querySelector(`select[name="type"]`)
+        let counter = document.querySelector("input[type='number']")
+        let textinput = document.querySelector(`input[type="text"]`)
+        let create = document.querySelector(`input[type="submit"]`)
+        let results = document.querySelector(".results")
+
+        let div
+        let textnode
+        let text = ""
+        let count = 0;
+
+        results.style.margin = "10px"
+        textinput.addEventListener("input", () => { text = textinput.value })
+        counter.addEventListener("input", () => {
+            count = counter.value
+            /*
+
+            //* it will be more dynamic if we put the loop here and removed the create button
+
+
+            results.innerHTML = ""
+            for (i = 1; i <= count; i++) {
+                div = document.createElement("div")
+                textnode = document.createTextNode(text)
+                div.appendChild(textnode)
+                div.setAttribute("id", i)
+                div.setAttribute("class", "hamada")
+                results.appendChild(div)
+            }
+            
+            */
+        })
+        form.style.display = "flex"
+        form.style.flexDirection = "column"
+        form.style.alignItems = "center"
+        form.style.gap = "15px"
+        for (i = 0; i < inputs.length; i++) {
+
+            inputs[i].style.width = "40vw"
+            inputs[i].style.padding = "10px"
+
+            inputs[i].style.margin = "0"
+
+
+        }
+        select.style.width = "calc(40vw + 23px)"
+        select.style.padding = "10px"
+        select.style.margin = "0"
+
+
+
+
+
+        create.addEventListener("click", () => {
+            results.innerHTML = ""
+            for (i = 1; i <= count; i++) {
+                div = document.createElement("div")
+                textnode = document.createTextNode(text)
+                div.appendChild(textnode)
+                div.setAttribute("id", i)
+                div.setAttribute("class", "hamada")
+                results.appendChild(div)
+            }
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>
