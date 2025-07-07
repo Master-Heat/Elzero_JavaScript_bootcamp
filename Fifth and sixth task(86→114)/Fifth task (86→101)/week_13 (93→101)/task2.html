@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_13/task_2 </title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .assign {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .assign input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ddd;
+        }
+
+        .assign input:focus {
+            outline: none;
+            border-color: #ccc;
+        }
+
+        .assign [title="Current"] {
+            padding: 20px;
+            margin: 10px auto;
+            width: 610px;
+            background-color: #f1f0f0;
+        }
+
+        .assign .classes-list {
+            padding: 20px;
+            margin: 10px auto;
+            width: 610px;
+            background-color: #f1f0f0;
+        }
+
+        .assign .classes-list h5 {
+            margin: 0 0 10px;
+            text-align: left;
+        }
+
+        .assign .classes-list div span {
+            background-color: #ff5722;
+            padding: 6px 10px 8px;
+            margin-right: 5px;
+            border-radius: 6px;
+            color: white;
+            display: inline-flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="assign">
+        <input type="text" class="classes-to-add" placeholder="Add Classes" />
+        <input type="text" class="classes-to-remove" placeholder="Remove Classes" />
+        <div class="element current" title="Current">Current Element</div>
+        <div class="classes-list">
+            <h5>Current Element Class Lists</h5>
+            <div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let add = document.querySelector(".classes-to-add")
+        let remove = document.querySelector(".classes-to-remove")
+        let element = document.querySelector(`[title="Current"]`)
+        let div = document.querySelector(".classes-list div")
+        let classes = "";
+        let classlist = []
+        let addedClasses = ""
+        let addedClassList = ""
+        let classesToRemove = ""
+        let classesToRemovelist = []
+        let ListToPrint = []
+        let emptyElement = document.createTextNode("No Classes To Show")
+
+        add.addEventListener("blur", function () {
+
+            addedClasses = add.value.toLowerCase().trim()
+            if (addedClasses != "") {
+                addedClassList = addedClasses.split(" ")
+                element.classList.add(...addedClassList)
+
+            }
+            if (element.classList.length == 0) {
+                div.innerHTML = "No Classes To Show"
+            } else {
+                div.innerHTML = ""
+                ListToPrint = [...element.classList].sort()
+                for (i = 0; i < ListToPrint.length; i++) {
+                    div.innerHTML += `<span>${ListToPrint[i]}</span>`
+                }
+            }
+            addedClasses = ""
+            add.value = ""
+
+        })
+        remove.addEventListener("blur", function () {
+            classesToRemove = remove.value.toLowerCase().trim()
+            if (classesToRemove != "") {
+
+                classesToRemovelist = classesToRemove.split(" ")
+
+                classesToRemovelist.forEach(className => {
+                    element.classList.remove(className);
+                });
+            }
+            classesToRemove = ""
+            remove.value = ""
+
+            if (element.classList.length == 0) {
+                div.innerHTML = "No Classes To Show"
+            } else {
+                div.innerHTML = ""
+                ListToPrint = [...element.classList].sort()
+                for (i = 0; i < ListToPrint.length; i++) {
+                    div.innerHTML += `<span>${ListToPrint[i]}</span>`
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
