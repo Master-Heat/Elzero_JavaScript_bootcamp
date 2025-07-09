@@ -11,6 +11,20 @@
     <div class="our-element">Our Element</div>
     <p>Paragraph</p>
     <script>
+        let div = document.querySelector(".our-element")
+        div.nextElementSibling.remove()
+        let bofereElement = document.createElement("div")
+        bofereElement.classList.add("start")
+        bofereElement.setAttribute("title", "Start Element")
+        bofereElement.setAttribute("data-value", "Start")
+        bofereElement.append("start")
+        div.before(bofereElement)
+        let afterElement = document.createElement("div")
+        afterElement.classList.add("End")
+        afterElement.setAttribute("title", "End Element")
+        afterElement.setAttribute("data-value", "End")
+        afterElement.append("End")
+        div.after(afterElement)
 
     </script>
 </body>
