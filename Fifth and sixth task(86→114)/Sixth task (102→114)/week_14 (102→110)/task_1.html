@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_14/task_1</title>
+</head>
+
+<body>
+
+    <script>
+        let thePrompt = prompt("Print Number From - To", "example: 5-20")
+        let loopborders = []
+        let num1
+        let num2
+        while (thePrompt) {
+            let loopborders = thePrompt.split("-")
+            if (loopborders.length === 2) {
+                if (!isNaN(loopborders[0].trim()) && !isNaN(loopborders[1].trim())) {
+                    num1 = Number(loopborders[0].trim())
+                    num2 = Number(loopborders[1].trim())
+                    console.log(num1 + "\n" + num2)
+                    for (i = Math.min(num1, num2); i <= Math.max(num1, num2); i++) {
+                        //document.body.innerHTML += `<p>${i}</p>`
+                        console.log(i)
+                    }
+                    break
+                }
+                else {
+
+                    thePrompt = prompt(`the input ${thePrompt} not valid, try again `, "example: 5-20")
+                }
+            } else {
+                thePrompt = prompt(`the input ${thePrompt} not valid, try again `, "example: 5-20")
+            }
+        }
+
+    </script>
+</body>
+
+</html>
