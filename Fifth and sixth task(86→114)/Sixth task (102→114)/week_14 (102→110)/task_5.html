@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_14/task_5</title>
+</head>
+
+<body>
+    <div>
+        10
+    </div>
+    <script>
+        let div = document.querySelector("div")
+        count = Number(div.textContent.trim())
+        let counter = setInterval(countdown, 1000)
+        function countdown() {
+            div.innerHTML -= 1
+            count--
+            if (count == 5) {
+                window.open("https://elzero.org/", "_blank", "width=500,height=600,left=200,top=100")
+            }
+            if (count == 0) {
+                clearInterval(counter)
+                window.location.href = "https://elzero.org/"
+            };
+        }
+    </script>
+</body>
+
+</html>
