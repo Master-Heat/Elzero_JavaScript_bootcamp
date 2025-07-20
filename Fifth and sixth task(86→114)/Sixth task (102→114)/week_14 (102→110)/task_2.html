@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_14/task_2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    body {
+        height: 200vh;
+    }
+
+    * {
+        font-family: "Roboto", sans-serif;
+    }
+
+    span {
+        position: absolute;
+        right: -15px;
+        top: -17px;
+        background-color: red;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        font-weight: bold;
+        border: 1px solid white;
+        justify-content: space-around;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .parent {
+        position: fixed;
+        left: 52%;
+        top: 25%;
+        translate: -50% -50%;
+        background-color: #eee;
+        width: 518px;
+        padding: 20px;
+        border: 1px solid #aaa;
+        text-align: center;
+        /*z-index: -1*/
+        ;
+        display: none;
+    }
+
+    h2 {
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div class="parent">
+        <h2>Welcome</h2>
+        <p>Welcome To Elzero Web School</p>
+        <span>x</span>
+    </div>
+
+    <script>
+        let popup = document.querySelector(".parent")
+        let exit = document.querySelector("span")
+        setTimeout(function () {
+            popup.style.display = "block"
+        }, 5000)
+        exit.addEventListener("click", function () { exit.parentNode.remove() })
+    </script>
+</body>
+
+</html>
