@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_15/task_1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --main-color: 30, 140, 255;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: rgba(var(--main-color), 10%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            min-height: 100vh;
+            color: rgb(51, 51, 51);
+            justify-content: space-around;
+
+            align-items: center;
+        }
+
+
+        form {
+            background-color: rgb(255, 255, 255);
+            padding: 20px 24px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 350px;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        form label {
+            font-weight: 600;
+
+            color: rgb(44, 62, 80);
+        }
+
+        form label:not(:first-child) {
+            margin-top: 15px;
+        }
+
+        form select {
+            padding: 10px 12px;
+            border: 1px solid rgb(204, 204, 204);
+            border-radius: 8px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        form select:focus {
+            border-color: rgb(var(--main-color));
+            ;
+            outline: none;
+            box-shadow: 0 0 5px rgb(var(--main-color));
+            ;
+        }
+
+        .styled-div {
+            width: 90%;
+            max-width: 500px;
+            padding: 25px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgba(var(--main-color), 70%);
+
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgb(var(--main-color));
+
+            font-family: 'Open Sans', sans-serif;
+            color: rgb(51, 51, 51);
+            margin: 60px 0 20px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .styled-div h2 {
+            color: rgb(var(--main-color));
+            ;
+            margin-bottom: 12px;
+            font-size: 1.8rem;
+        }
+
+        .styled-div p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        @media (max-width:997px) {
+            body {
+                flex-direction: column;
+            }
+
+            .styled-div {
+                margin: 20px 0 40px;
+            }
+
+            form {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="font">Select the font you want </label>
+        <select name="font" id="font">
+            <option value="'Open Sans', sans-serif">Open Sans</option>
+            <option value="'Cairo', sans-serif">Cairo</option>
+            <option value="'Roboto', sans-serif">Roboto</option>
+        </select>
+        <label for="color">Select the color you want </label>
+        <select name="color" id="color">
+            <option value="30, 144, 255">Dodger Blue</option> <!-- rgb(30, 144, 255) -->
+            <option value="51, 51, 51">Dark Gray</option> <!-- rgb(51, 51, 51) -->
+            <option value="34, 139, 34">Forest Green</option> <!-- rgb(34, 139, 34) -->
+            <option value="255, 69, 0">Orange Red</option> <!-- rgb(255, 69, 0) -->
+            <option value="128, 0, 128">Purple</option> <!-- rgb(128, 0, 128) -->
+            <option value="143, 188, 143">Green Gray</option> <!-- rgb(143, 188, 143) -->
+        </select>
+        <label for="size">Select the size of the paragraph as you want </label>
+        <select name="size" id="size">
+        </select>
+    </form>
+    <div class="styled-div">
+
+        <h2>Welcome to My Website</h2>
+        <p>Feel free to experiment with different font sizes, families, and colors to see how they enhance the overall
+            look and readability of the content.</p>
+    </div>
+    <script>
+        let sizes = document.querySelector("#size")
+        for (i = 16; i <= 30; i++) {
+            let size = document.createElement("option")
+            size.textContent = i
+            sizes.appendChild(size)
+        }
+
+        // All of the rest are preparation and here is the core of the task
+        let selectColor = document.getElementById("color")
+        let selectFont = document.getElementById("font")
+        let selectSize = document.getElementById("size")
+        let paragraph = document.querySelector(" .styled-div p")
+        selectColor.addEventListener("change", function () {
+            window.localStorage.color = this.value
+            document.documentElement.style.setProperty('--main-color', this.value);
+        })
+        selectSize.addEventListener("change", function () {
+            window.localStorage.size = this.value
+            paragraph.style.fontSize = `${Number(this.value)}px`
+
+
+
+        })
+        selectFont.addEventListener("change", function () {
+            window.localStorage.font = this.value
+            document.body.style.fontFamily = this.value
+        })
+        if (window.localStorage.color) {
+            document.documentElement.style.setProperty('--main-color', window.localStorage.color);
+            selectColor.value = window.localStorage.color
+        } else {
+            document.documentElement.style.setProperty('--main-color', selectColor.value);
+        }
+
+        if (window.localStorage.size) {
+            paragraph.style.fontSize = window.localStorage.size
+            selectSize.value = window.localStorage.size
+
+        } else {
+            paragraph.style.fontSize = `${Number(selectSize)}px`
+        }
+
+        if (window.localStorage.font) {
+            document.body.style.fontFamily = window.localStorage.font
+            selectFont.value = window.localStorage.font
+        } else {
+            document.body.style.fontFamily = selectFont
+        }
+
+    </script>
+</body>
+
+</html>
