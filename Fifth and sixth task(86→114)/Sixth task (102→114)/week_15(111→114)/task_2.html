@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>week_15/task 2 (Job Application Form)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007bff;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Job Application</h2>
+        <form>
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required>
+            </div>
+
+            <div class="form-group">
+                <label for="position">Position Applying For</label>
+                <select id="position" name="position" required>
+                    <!-- <option value="" disabled selected>Select a position</option> -->
+                    <option value="frontend">Frontend Developer</option>
+                    <option value="backend">Backend Developer</option>
+                    <option value="designer">UI/UX Designer</option>
+                    <option value="software-developer">Software Developer</option>
+                    <option value="mobile-developer">Mobile Developer</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+    </div>
+    <script>
+
+
+        let name = document.querySelector("#fullname")
+        let email = document.querySelector("#email")
+        let phone = document.querySelector("#phone")
+        let position = document.querySelector("#position")
+        name.addEventListener("blur", (e) => {
+            window.sessionStorage.name = e.currentTarget.value
+        })
+        email.addEventListener("blur", (e) => {
+            window.sessionStorage.email = e.currentTarget.value
+        })
+        phone.addEventListener("blur", (e) => {
+            window.sessionStorage.phone = e.currentTarget.value
+        })
+        position.addEventListener("change", (e) => {
+            window.sessionStorage.position = e.currentTarget.value
+        })
+        if (window.sessionStorage.name) {
+            name.value = window.sessionStorage.name
+        }
+        if (window.sessionStorage.email) {
+            email.value = window.sessionStorage.email
+        }
+        if (window.sessionStorage.phone) {
+            phone.value = window.sessionStorage.phone
+        }
+        if (window.sessionStorage.position) {
+            position.value = window.sessionStorage.position
+        }
+
+
+
+    </script>
+</body>
+
+</html>
