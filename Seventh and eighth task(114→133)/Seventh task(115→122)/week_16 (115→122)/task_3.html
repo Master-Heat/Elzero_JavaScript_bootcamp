@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_16/task_2</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = ["Ahmed", "Sameh", "Sayed"];
+        let arr2 = ["Mohamed", "Gamal", "Amir"];
+        let arr3 = ["Haytham", "Shady", "Mahmoud"];
+
+        // Play With Arrays To Prepare For Destructuring
+        // Write Your Destructuring Assignment Here
+        let [c, ,] = arr1
+        let [b, ,] = arr2
+        let [, a,] = arr3
+        console.log(`My Best Friends: ${a}, ${b}, ${c}`);
+
+        // My Best Friends: Shady, Mahmoud, Ahmed
+    </script>
+</body>
+
+</html>
