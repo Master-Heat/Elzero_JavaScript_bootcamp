@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_17/task_7</title>
+</head>
+
+<body>
+    <script>
+        let numsOne = [1, 2, 3];
+        let numsTwo = [4, 5, 6];
+        let merge1 = [...numsOne, ...numsTwo]
+        console.log(merge1)
+        let merge2 = numsOne.concat(numsTwo)
+        console.log(merge2)
+        let merge3 = numsOne
+        for (e of numsTwo) {
+            merge3.push(e)
+        }
+        console.log(merge3)
+
+
+        // Needed Output : [1, 2, 3, 4, 5, 6]
+    </script>
+</body>
+
+</html>
