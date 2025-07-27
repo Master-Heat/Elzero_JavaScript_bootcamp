@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_17/task_5</title>
+</head>
+
+<body>
+    <script>
+        let theName = "Elzero";
+        let arr1 = [...theName]
+        console.log(arr1)
+        let arr2 = theName.split("")
+        console.log(arr2)
+        let arr3 = Array.from(theName)
+        console.log(arr3)
+        let arr4 = new Set(theName)
+        console.log(arr4)
+        let arr5 = []
+        for (iterator of theName) {
+            arr5.push(iterator)
+        }
+        console.log(arr5)
+
+        // Needed Output:['E', 'l', 'z', 'e', 'r', 'o']
+    </script>
+</body>
+
+</html>
