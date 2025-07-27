@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_17/task_6</title>
+</head>
+
+<body>
+    <script>
+        let chars1 = ["A", "B", "C", "D", "E", 10, 15, 6];
+        chars1.copyWithin(3, 0)
+        console.log(chars1)
+        // Needed Output : ['A', 'B', 'C', 'A', 'B', 'C', 'D', 'E']
+        let chars2 = ["A", "B", "C", 20, "D", "E", 10, 15, 6];
+        chars2.copyWithin(3, 4)
+        chars2.copyWithin(4, 0)
+        console.log(chars2)
+        // Needed Output : ['A', 'B', 'C', 'D', 'A', 'B', 'C', 'D', 'E']
+        let chars3 = ["Z", "Y", "A", "D", "E", 10, 1];
+        chars3.copyWithin(4, 2)
+        chars3.copyWithin(2, 0, 2)
+        console.log(chars3)
+
+        // Needed Output : ["Z", "Y", "Z", "Y", "A", "D", "E"]
+    </script>
+</body>
+
+</html>
