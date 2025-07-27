@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_17/task_3</title>
+</head>
+
+<body>
+    <script>
+        let myInfo = {
+            username: "Osama",
+            role: "Admin",
+            country: "Egypt",
+        };
+        mapMyInfo = new Map()
+        Object.keys(myInfo).forEach(key => {
+            mapMyInfo.set(key, myInfo[key])
+        })
+        console.log(mapMyInfo)
+        console.log(mapMyInfo.size)
+        console.log(mapMyInfo.has("role"))
+
+        // Needed Output
+        //Map(3) {'username' => 'Osama', 'role' => 'Admin', 'country' => 'Egypt'}
+        //3
+        //true
+    </script>
+</body>
+
+</html>
