@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Breakdown</title>
+    <style>
+        :root {
+            /* 🌅 TEAL & ORANGE VIBRANT PALETTE */
+            --bg-color: #0d1b1e;
+            --text-color: #f0f4f8;
+            --code-bg: #1c2f33;
+            --border-color: #2e4a50;
+
+            --title-bg: #ff7f50;
+            --title-text: #ffffff;
+
+            --row-bg1: #143d40;
+            --row-bg2: #1c5054;
+            --section-bg: #102b2d;
+            --section-text: #4fd1c5;
+
+            --token-bg: #ffb347;
+            --token-text: #2d1b0e;
+
+            --desc-bg: #008080;
+            --desc-text: #e6fffa;
+
+            --section-sep: #ffb347;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        code {
+            display: block;
+            background: var(--code-bg);
+            color: var(--text-color);
+            padding: 15px;
+            border-radius: 6px;
+            font-family: Consolas, monospace;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Title */
+        .title {
+            background: var(--title-bg);
+            color: var(--title-text);
+            font-weight: bold;
+            padding: 15px;
+            font-size: 1.2rem;
+            border-radius: 6px 6px 0 0;
+            margin-bottom: 0;
+        }
+
+        /* Table (grid) container */
+        .table {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            border: 2px solid var(--border-color);
+            border-top: none;
+        }
+
+
+        /* Each row */
+        .row {
+            display: contents;
+            /* lets grid children span full structure */
+        }
+
+        /* Left section cell */
+        .section {
+            background: var(--section-bg);
+            color: var(--section-text);
+            font-weight: bold;
+            padding: 10px;
+            font-family: monospace;
+            border-right: 2px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        @media (max-width:580px) {
+            .table {
+                grid-template-columns: 1fr;
+            }
+
+
+        }
+
+        /* Right content cell */
+        .content {
+            background: var(--row-bg1);
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Alternate row background for content cells */
+        .content:nth-of-type(even) {
+            background: var(--row-bg2);
+        }
+
+        /* Token styling */
+        .content span {
+            background: var(--token-bg);
+            color: var(--token-text);
+            padding: 4px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin-right: 5px;
+            display: inline-block;
+        }
+
+        /* Explanation styling */
+        .content p {
+            background: var(--desc-bg);
+            color: var(--desc-text);
+            padding: 6px 8px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 6px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <code>
+    let re = /https?:\/\/(?:[-\w]+\.)?([-\w]+)\.\w+(?:\.\w+)?\/?.*/i;
+  </code>
+
+    <div class="title">This regular expression matches a URL format</div>
+
+    <div class="table">
+
+        <div class="row">
+            <div class="section">/https?:\/\//</div>
+            <div class="content">
+                <span>/</span>
+                <p>Start the regular expression</p>
+                <span>http</span>
+                <p>Just match http</p>
+                <span>s?</span>
+                <p>Optional s</p>
+                <span>\/\/</span>
+                <p>Match //</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="section">(?:[-\w]+\.)?</div>
+            <div class="content">
+                <span>(?: ... )</span>
+                <p>Make this part not saved as a different part of the regex, making it slightly faster</p>
+                <span>[-\w]+</span>
+                <p>Match one or more word characters or hyphens; faster, cleaner, and more readable than (-|\w)</p>
+                <span>\.</span>
+                <p>Match a literal dot</p>
+                <span>?</span>
+                <p>Make all of the previous bracket optional</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="section">([-\w]+)\.\w+</div>
+            <div class="content">
+                <span>[-\w]+</span>
+                <p>Match one or more word characters or hyphens; faster, cleaner, and more readable than (-|\w)</p>
+                <span>\.</span>
+                <p>Match a literal dot</p>
+                <span>\w+</span>
+                <p>Match one or more word characters</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="section">(?:\.\w+)?</div>
+            <div class="content">
+                <span>(?: ... )</span>
+                <p>Make this part not saved as a different part of the regex, making it slightly faster</p>
+                <span>\.</span>
+                <p>Match a literal dot</p>
+                <span>\w+</span>
+                <p>Match one or more word characters</p>
+                <span>?</span>
+                <p>Make all of the previous bracket optional</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="section">\/?.*/i</div>
+            <div class="content">
+                <span>\/?</span>
+                <p>Optional slash</p>
+                <span>.*</span>
+                <p>Match zero or more characters</p>
+                <span>/</span>
+                <p>End the regular expression</p>
+                <span>i</span>
+                <p>Just a flag for making the expression case insensitive</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+
+</html>
