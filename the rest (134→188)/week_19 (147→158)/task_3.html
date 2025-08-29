@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week_19/task_3</title>
+</head>
+
+<body>
+    <script>
+        // Edit The Class
+        class User {
+            #c
+            constructor(username, card) {
+                this.u = username;
+
+
+                if (/(\d{4}-){3}(?=\d{4})/.test(card)) {
+                    this.#c = card
+                } else if (typeof card === "string" && card.length == 16) {
+                    // normal string methods to slice it 
+                    this.#c = [card.slice(0, 4), card.slice(4, 8), card.slice(8, 12), card.slice(12, 16)].join("-")
+                } else if (typeof card === "number") {
+                    // regular expression way 
+                    this.#c = String(card).replace(/\d{4}(?=\d{4})/g, '$&-')
+                } else { this.#c = "Wrong card number" }
+
+
+
+            }
+            get showData() {
+                return ` Hello ${this.u} Your Credit Card Number Is ${this.#c}`
+            }
+        }
+
+
+
+        // Do Not Edit Anything Below
+
+        let userOne = new User("Osama", "1234-5678-1234-5678");
+        let userTwo = new User("Ahmed", "1234567812345678");
+        let userThree = new User("Ghareeb", 1234567812345678);
+
+        console.log(userOne.showData);
+        // Hello Osama Your Credit Card Number Is 1234-5678-1234-5678
+
+        console.log(userTwo.showData);
+        // Hello Ahmed Your Credit Card Number Is 1234-5678-1234-5678
+
+        console.log(userThree.showData);
+        // Hello Ghareeb Your Credit Card Number Is 1234-5678-1234-5678
+
+        console.log(userOne.c); // Prevent Accessing To Card Property Here
+        // Undefined
+    </script>
+</body>
+
+</html>
