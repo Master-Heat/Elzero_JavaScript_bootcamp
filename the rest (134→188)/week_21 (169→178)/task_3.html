@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week_21/task_3</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        let req = new XMLHttpRequest();
+        req.open("GET", "task_1.json")
+        req.send()
+        req.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                let content = JSON.parse(req.responseText)
+                for (i = 0; i < content.length; i++) {
+
+                    content[i]["Category"] = "All"
+                }
+                console.log(content)
+                let updatedData = JSON.stringify(content)
+                console.log(updatedData)
+            }
+        }
+    </script>
+</body>
+
+</html>

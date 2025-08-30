@@ -1,0 +1,37 @@
+[
+  {
+    "ID": 1,
+    "Author": "3am Shalaby",
+    "Category": "Technology",
+    "Title": "How The Front-End Is Dead",
+    "body": "After decades of arguing about tabs vs spaces and inventing new JavaScript frameworks every other Tuesday, front-end development has finally flatlined. The web no longer needs an army of developers to move buttons three pixels to the left. With tools doing everything from color palettes to responsive design automatically, front-end has been reduced to Googling 'CSS center div' and calling it a day. May it rest in peace."
+  },
+  {
+    "ID": 2,
+    "Author": "El7ag Sayed",
+    "Category": "Technology",
+    "Title": "AI Tools That Killed Front-End Developers",
+    "Body": "The nail in the coffin for front-end developers wasn’t technology; it was their obsession with renaming job titles. Once 'HTML wizard' became 'Front-End Ninja Engineer III', everyone knew the end was near. Now, code generators crank out prettier websites in seconds than humans could in a lifetime of debugging CSS margins. Front-end developers are officially replaced—by buttons that make buttons."
+  },
+  {
+    "ID": 3,
+    "Author": "Khalak Men3em",
+    "Category": "Technology",
+    "Title": "If You Are A Front-End Developer You Need To Find New Job",
+    "Body": "If you’re still calling yourself a front-end developer in 2025, congratulations—you’re a relic. Your entire skill set has been boiled down to dragging components around in a GUI while praying they don’t break. Recruiters now filter resumes by deleting anything with the word 'JavaScript' unless it’s preceded by 'Full-Stack.' The writing’s on the wall: learn something else or be replaced by a middle schooler with a drag-and-drop website builder."
+  },
+  {
+    "ID": 4,
+    "Author": "Elzero 3ammak",
+    "Category": "Technology",
+    "Title": "AI Tool That Replaced Frontend Developers",
+    "Body": "Some genius invented a tool that replaces every front-end developer with a single checkbox labeled 'Make it pretty.' It writes CSS better than humans, fixes every layout bug instantly, and doesn’t complain about design mockups. Front-end developers are now applying for jobs as 'Full-Time Code Reviewers of Machines That Write Code'—a position widely regarded as the ultimate downgrade. It’s official: the computer has won."
+  },
+  {
+    "ID": 5,
+    "Author": "Mesh Ana Elle Kateb",
+    "Category": "Technology",
+    "Title": "Companies Use AI And Lay Off Front-End Developers",
+    "Body": "Corporate overlords discovered that firing their front-end teams had no visible impact, because nobody actually noticed the difference between handcrafted components and auto-generated ones. Layoffs were celebrated as a 'milestone in productivity,' proving that a five-person team spending three weeks debating button colors can indeed be replaced by a single intern. Front-end development, once a prestigious craft, is now just a meme."
+  }
+]

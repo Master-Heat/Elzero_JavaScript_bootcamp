@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week_21/task_4</title>
+</head>
+
+<body>
+
+    <script>
+        let req = new XMLHttpRequest();
+        req.open("GET", "task_1.json")
+        req.send()
+        let div = document.createElement("div")
+        document.body.appendChild(div);
+        div.setAttribute("id", "data")
+        req.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                let JsonFile = JSON.parse(req.responseText)
+                for (let i = 0; i < JsonFile.length; i++) {
+                    let innerdiv = document.createElement("div")
+                    div.appendChild(innerdiv)
+                    let h2 = document.createElement("h2")
+                    innerdiv.appendChild(h2)
+                    h2.appendChild(document.createTextNode(JsonFile[i]["Title"]))
+                    let articleNumberBodyP = document.createElement("p");
+                    innerdiv.appendChild(articleNumberBodyP)
+                    articleNumberBodyP.appendChild(document.createTextNode(`Article Number ${JsonFile[i]["ID"]} Body`))
+                    let AuthtorP = document.createElement("p")
+                    innerdiv.appendChild(AuthtorP)
+                    AuthtorP.appendChild(document.createTextNode(`Author: ${JsonFile[i]["Author"]}`))
+                    let CategoryP = document.createElement("p")
+                    innerdiv.appendChild(CategoryP)
+                    CategoryP.appendChild(document.createTextNode(`Category: ${JsonFile[i]["Category"]}`))
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
