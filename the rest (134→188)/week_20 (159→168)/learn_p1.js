@@ -241,9 +241,9 @@ let start = new Date();
 // for (let i = 0; i < 100000; i++) {
 //   document.write(`<div>${i}</div>`);
 //   //? alternative DOM creation (equivalent behavior but different performance characteristics)
-//   // let div = document.createElement("div");
-//   // div.append(document.createTextNode(i));
-//   // document.body.appendChild(div);
+// let div = document.createElement("div");
+// div.append(document.createTextNode(i));
+// document.body.appendChild(div);
 // }
 
 //? time End (Date-based)
