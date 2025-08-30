@@ -1,0 +1,11 @@
+{
+  "String": "Elzero",
+  "Number": 100,
+  "Object": {
+    "EG": "Giza",
+    "USA": "New York City"
+  },
+  "Array": ["HTML", "CSS", "JS"],
+  "Bool": true,
+  "Null": null
+}
