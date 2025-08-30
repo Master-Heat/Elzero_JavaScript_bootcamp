@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week_20/task_1</title>
+</head>
+
+<body>
+    <script>
+        let date = new Date();
+        let pirthDay = new Date("Jul 12,2004")
+        timeRange = date - pirthDay
+        console.log(Math.round(timeRange / 1000) + " Seconds")
+        console.log(Math.round(timeRange / 1000 / 60) + " Minutes")
+        console.log(Math.round(timeRange / 1000 / 60 / 60) + " Hours")
+        console.log(Math.round(timeRange / 1000 / 60 / 60 / 24) + " Days")
+        console.log(Math.round(timeRange / 1000 / 60 / 60 / 24 / 30) + " Months")
+        console.log(Math.round(timeRange / 1000 / 60 / 60 / 24 / 365) + " years")
+
+    </script>
+</body>
+
+</html>

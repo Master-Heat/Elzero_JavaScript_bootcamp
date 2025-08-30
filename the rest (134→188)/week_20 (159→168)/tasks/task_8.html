@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week_20/task_8</title>
+</head>
+
+<body>
+    <div>
+        Make sure to use Live Server or any local server to run this project instead of opening the HTML file directly.
+        Browsers block ES module imports when loaded via <code>file://</code> for security reasons.
+
+        <br><br>
+        <strong>CORS (Cross-Origin Resource Sharing):</strong> A browser security mechanism that controls whether a web
+        page
+        from one origin can request data from another origin (cross-origin data exchange).
+
+        <br><br>
+        <strong>ES Modules:</strong> When you use <code>type="module"</code> or <code>import</code>, the browser fetches
+        the module files over the network (even locally).
+
+        <br><br>
+        <strong>Why file:// fails:</strong> Opening files directly means there’s no web server. The page has
+        <code>origin: null</code>, and the browser treats imports as cross-origin requests with no CORS headers,
+        so it blocks them for security.
+
+        <p>
+            <strong>TL;DR</strong><br>
+            CORS is a browser security system that restricts cross-origin requests.<br>
+            ES Modules always fetch files via network requests.<br>
+            Opening files with <code>file://</code> fails because no server is present to handle requests or provide
+            CORS headers.
+        </p>
+    </div>
+
+    <script src="main.js" type="module">
+    </script>
+    <script src="mod-one.js" type="module">
+    </script>
+    <script src="mod-two.js" type="module">
+    </script>
+
+</body>
+
+</html>
