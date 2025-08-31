@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week_22/task_2</title>
+</head>
+
+<body>
+    <script>
+        fetch("./jsonFile.json").then((response) => {
+            let data = response.json()
+            return data
+        }).then((data) => {
+
+            //* we can directly alter this in the loop but I modified the lentgth of the object
+            data.length = 5
+            let div = document.createElement("div")
+            document.body.appendChild(div)
+
+
+            for (let i = 0; i < data.length; i++) {
+                let innerdiv = document.createElement("div")
+                div.appendChild(innerdiv)
+                let h3 = document.createElement("h3")
+                innerdiv.appendChild(h3)
+                h3.appendChild(document.createTextNode(data[i]["title"]))
+                let p = document.createElement("p");
+                innerdiv.appendChild(p)
+                p.appendChild(document.createTextNode(data[i]["description"]))
+
+
+            }
+        }
+        )
+
+    </script>
+</body>
+
+</html>

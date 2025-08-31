@@ -80,6 +80,7 @@ const thePromise = new Promise(function (resolveFuction, RejectFuction) {
   }
 });
 console.log(thePromise);
+
 thePromise.then(
   (resolveValue) => console.log(`Good ${resolveValue}`),
   (rejectValue) => console.log(`bad ${rejectValue}`)

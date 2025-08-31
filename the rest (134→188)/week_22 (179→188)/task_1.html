@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week_22/task_2</title>
+</head>
+
+<body>
+    <script>
+
+
+        const promise = new Promise((res, rej) => {
+            let req = new XMLHttpRequest();
+
+
+
+            req.onload = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    res(JSON.parse(this.responseText));
+                } else {
+                    rej(Error("No Data found"));
+                }
+            }
+            req.open("GET", "./jsonFile.json")
+            req.send()
+        })
+        promise.then((data) => {
+            let div = document.createElement("div")
+            document.body.appendChild(div)
+            for (let i = 0; i < 5; i++) {
+                let innerdiv = document.createElement("div")
+                div.appendChild(innerdiv)
+                let h3 = document.createElement("h3")
+                innerdiv.appendChild(h3)
+                h3.appendChild(document.createTextNode(data[i]["title"]))
+                let p = document.createElement("p");
+                innerdiv.appendChild(p)
+                p.appendChild(document.createTextNode(data[i]["description"]))
+            }
+        }, (reject) => {
+            console.log("ERROR")
+        }
+        )
+
+
+    </script>
+</body>
+
+</html>
